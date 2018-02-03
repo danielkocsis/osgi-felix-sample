@@ -1,0 +1,2 @@
+Bundle-SymbolicName: osgi.sample.impl
+Bundle-Description: This is a sample API implementor bundle

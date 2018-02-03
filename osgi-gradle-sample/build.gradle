@@ -1,0 +1,37 @@
+group 'org.dani.osgi'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'biz.aQute.bnd:biz.aQute.bnd.gradle:3.5.0'
+    }
+}
+
+subprojects {
+    repositories {
+        mavenCentral()
+    }
+
+    apply plugin: 'biz.aQute.bnd.builder'
+
+    dependencies {
+        compileOnly group: 'org.osgi', name: 'org.osgi.core', version: '6.0.0'
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+    }
+}
+
+task copyJarsToFelix(type: Copy) {
+    def jars = []
+    subprojects.each {
+        jars += it.libsDir
+    }
+    from jars
+    into '../felix-framework/bundle/'
+}
+
+task deployBundles(type: GradleBuild) {
+    tasks = ['clean', 'jar', 'copyJarsToFelix']
+}

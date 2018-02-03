@@ -1,0 +1,6 @@
+rootProject.name = 'osgi-gradle-sample'
+
+include 'osgi-sample-api'
+include 'osgi-sample-impl'
+include 'osgi-sample-ds'
+

@@ -1,0 +1,6 @@
+Bundle-SymbolicName: osgi.sample.api
+Bundle-Description: This is a sample API bundle
+Bundle-Activator: org.dani.osgi.sample.api.BundleActivator
+Export-Package:\
+  org.dani.osgi.sample.api
+Import-Package: *

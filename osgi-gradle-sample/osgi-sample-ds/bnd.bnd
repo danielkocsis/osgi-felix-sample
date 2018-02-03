@@ -1,0 +1,3 @@
+Bundle-SymbolicName: osgi.sample.ds
+Bundle-Description: This is an OSGi Declarative services sample bundle
+Bundle-Activator:org.dani.osgi.sample.ds.DSBundleActivator
